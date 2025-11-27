@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Dashboard Full Width</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Fullscreen</title>
 <style>
+  /* Reset margin & padding untuk body dan html */
   html, body {
-    margin: 0; padding: 0; width: 100%; height: 100%; overflow-x: hidden; background: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* hilangkan scroll horizontal */
+    background: #f4f6f9;
   }
 
+  /* Center iframe wrapper */
   body {
     display: flex;
-    justify-content: center; /* center horizontally */
+    justify-content: center; /* horizontal center */
     align-items: flex-start; /* mulai dari atas */
-    min-height: 100vh;
-    padding: 20px; /* padding sekitar dashboard */
+    padding: 20px; /* ruang di sisi layar */
     box-sizing: border-box;
   }
 
+  /* Wrapper untuk iframe agar responsif */
   .iframe-wrapper {
     position: relative;
     width: 100%;
-    max-width: 900px;  /* max lebar dashboard agar tidak terlalu besar */
-    padding-bottom: 75%; /* rasio tinggi agar proporsional */
+    max-width: 1200px; /* maksimal lebar */
+    padding-bottom: 75%; /* rasio tinggi terhadap lebar */
     height: 0;
     overflow: hidden;
     border-radius: 10px;
@@ -30,34 +37,37 @@
     background: white;
   }
 
+  /* Iframe full responsive */
   .iframe-wrapper iframe {
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border: none;
     display: block;
   }
 
-  /* Responsive adjustments */
+  /* Responsive untuk layar kecil */
   @media (max-width: 600px) {
     body {
       padding: 10px;
     }
     .iframe-wrapper {
-      max-width: 100%;
-      padding-bottom: 90%; /* lebih tinggi untuk layar kecil */
+      padding-bottom: 90%; /* tinggi lebih besar untuk layar kecil */
     }
   }
 </style>
 </head>
 <body>
+
   <div class="iframe-wrapper">
     <iframe
-      src="https://1drv.ms/x/c/2CA4BEDDF02455CD/IQQl_qyz2hUZRLWcznDHcB1HAZoq2_acBqiEKdpvPPO1E6U?em=2&wdAllowInteractivity=False&Item=DashboardMp&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
+      src="https://1drv.ms/x/c/2CA4BEDDF02455CD/IQQl_qyz2hUZRLWcznDHcB1HAZoq2_acBqiEKdpvPPO1E6U?em=2&wdAllowInteractivity=False&Item=ds_area&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
       scrolling="no"
       allowfullscreen>
     </iframe>
   </div>
+
 </body>
 </html>
