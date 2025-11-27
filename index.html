@@ -10,7 +10,7 @@
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow-x: hidden; /* hilangkan scroll horizontal */
+    overflow-x: hidden;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -48,28 +48,29 @@
     width: 100%;
     overflow: hidden;
     display: flex;
-    justify-content: center; /* center iframe */
+    justify-content: center; /* center horizontal */
     align-items: flex-start;
     padding: 0;
   }
 
   /* Wrapper iframe responsif */
   .iframe-wrapper {
-    width: 100%;         /* penuh lebar layar */
-    max-width: none;     /* hilangkan batas max-width */
-    height: 0;
-    padding-bottom: 65%; /* sesuaikan rasio tinggi dashboard */
     position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 65%; /* rasio tinggi dashboard */
+    overflow: hidden;
   }
 
+  /* Iframe style diperbaiki supaya center */
   .iframe-wrapper iframe {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%); /* center horizontal */
+    width: 1200px; /* sesuaikan lebar asli dashboard */
     height: 100%;
     border: none;
-    display: block;
   }
 
   /* Responsive untuk layar kecil */
@@ -84,6 +85,10 @@
     }
     .iframe-wrapper {
       padding-bottom: 90%; /* lebih tinggi untuk HP */
+    }
+    .iframe-wrapper iframe {
+      width: 100%; /* penuh lebar layar HP */
+      transform: translateX(0); /* hilangkan translateX di HP */
     }
   }
 </style>
