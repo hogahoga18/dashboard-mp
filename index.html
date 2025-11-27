@@ -3,14 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard Fullscreen</title>
+<title>Dashboard Fullscreen Responsive</title>
 <style>
   html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -46,51 +45,40 @@
   .iframe-container {
     flex: 1 1 auto;
     width: 100%;
-    overflow: hidden;
     display: flex;
-    justify-content: center; /* center horizontal */
+    justify-content: center; /* horizontal center */
     align-items: flex-start;
-    padding: 0;
+    overflow: hidden;
+    position: relative;
   }
 
-  /* Wrapper iframe responsif */
+  /* Wrapper responsive */
   .iframe-wrapper {
     position: relative;
     width: 100%;
-    max-width: 100%;
-    padding-bottom: 65%; /* rasio tinggi dashboard */
+    max-width: 1200px; /* lebar dashboard desktop */
     overflow: hidden;
+    padding-top: 65%; /* rasio tinggi/lebar */
   }
 
-  /* Iframe style diperbaiki supaya center */
   .iframe-wrapper iframe {
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%); /* center horizontal */
-    width: 1200px; /* sesuaikan lebar asli dashboard */
+    left: 0;
+    width: 100%;
     height: 100%;
     border: none;
+    transform-origin: top left;
   }
 
-  /* Responsive untuk layar kecil */
-  @media (max-width: 600px) {
-    header {
-      font-size: 20px;
-      padding: 10px 0;
-    }
-    footer {
-      font-size: 12px;
-      padding: 8px 0;
-    }
-    .iframe-wrapper {
-      padding-bottom: 90%; /* lebih tinggi untuk HP */
-    }
+  /* Scaling otomatis agar responsive */
+  @media (max-width: 1200px) {
     .iframe-wrapper iframe {
-      width: 100%; /* penuh lebar layar HP */
-      transform: translateX(0); /* hilangkan translateX di HP */
+      transform: scale(calc(100vw / 1200));
+      transform-origin: top left;
     }
   }
+
 </style>
 </head>
 <body>
@@ -102,7 +90,7 @@
 <div class="iframe-container">
   <div class="iframe-wrapper">
     <iframe
-      src="https://1drv.ms/x/c/2CA4BEDDF02455CD/IQQl_qyz2hUZRLWcznDHcB1HAZoq2_acBqiEKdpvPPO1E6U?em=2&wdAllowInteractivity=False&Item=DashboardArea&wdHideGridlines=True&wdInConfigurator=True&wdInConfigurator=True"
+      src="https://1drv.ms/x/c/2CA4BEDDF02455CD/IQQl_qyz2hUZRLWcznDHcB1HAZoq2_acBqiEKdpvPPO1E6U?em=2&wdAllowInteractivity=False&Item=DashboardArea&wdHideGridlines=True&wdInConfigurator=True"
       scrolling="no"
       allowfullscreen>
     </iframe>
