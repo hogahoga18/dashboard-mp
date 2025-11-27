@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Online</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .dashboard-box {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        /* Responsif area iframe */
+        .iframe-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 70%; /* rasio tinggi dashboard responsif */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .iframe-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Dashboard Online
+    </header>
+
+    <div class="container">
+        <div class="dashboard-box">
+
+            <div class="iframe-wrapper">
+
+                <!-- IFRAME ANDA DITEMPATKAN DISINI -->
+                <iframe 
+                    width="700" 
+                    height="682" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    src="https://saptaindra-my.sharepoint.com/personal/admin_hc_sera_saptaindra_co_id/_layouts/15/Doc.aspx?sourcedoc={84e6769b-7454-4e32-9424-d22b3cc082fa}&action=embedview&wdAllowInteractivity=False&Item=DashboardArea&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
+                </iframe>
+
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Dashboard Online | Powered by Excel + HTML
+    </footer>
+
+</body>
+</html>
