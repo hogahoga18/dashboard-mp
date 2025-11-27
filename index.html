@@ -1,83 +1,321 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Dashboard Online</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f6f9;
-        }
-        header {
-            background: #1f2937;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
-        .dashboard-box {
-            background: white;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-            overflow: hidden;
-        }
-        /* Responsif area iframe */
-        .iframe-wrapper {
-            position: relative;
-            width: 100%;
-            padding-bottom: 70%; /* rasio tinggi dashboard responsif */
-            height: 0;
-            overflow: hidden;
-            border-radius: 10px;
-        }
-        .iframe-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        footer {
-            text-align: center;
-            padding: 15px;
-            margin-top: 30px;
-            color: #777;
-            font-size: 14px;
-        }
-        @media (max-width: 600px) {
-            header {
-                font-size: 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        Dashboard Online
-    </header>
-    <div class="container">
-        <div class="dashboard-box">
-            <div class="iframe-wrapper">
-                <!-- IFRAME BARU ANDA -->
-          
-                <iframe width="700" height="682" frameborder="0" scrolling="no" src="https://1drv.ms/x/c/2CA4BEDDF02455CD/IQQl_qyz2hUZRLWcznDHcB1HAZoq2_acBqiEKdpvPPO1E6U?em=2&wdAllowInteractivity=False&Item=DashboardArea&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+<!-- ===== FORMULIR CUTI ===== -->
+<style>
+  body, .form-cuti * {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+  }
+  .form-cuti {
+    width: 100%;
+    max-width: 900px;
+    border: 1px solid black;
+    padding: 15px;
+    margin: 20px auto;
+    font-size: 12px;
+    background: white;
+  }
+  .form-cuti h1 {
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+  .form-cuti .header-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .form-cuti .header-info div {
+    width: 48%;
+    min-width: 280px;
+  }
+  .form-cuti .header-info div p {
+    margin: 3px 0;
+  }
+  .form-cuti .section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  .form-cuti table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  .form-cuti table, .form-cuti th, .form-cuti td {
+    border: 1px solid black;
+  }
+  .form-cuti th, .form-cuti td {
+    padding: 3px;
+    vertical-align: top;
+    font-size: 12px;
+  }
+  .form-cuti textarea {
+    width: 100%;
+    resize: vertical;
+    font-size: 12px;
+  }
+  .form-cuti input[type="text"], 
+  .form-cuti input[type="number"], 
+  .form-cuti select,
+  .form-cuti input[type="date"] {
+    width: 100%;
+    padding: 2px;
+    font-size: 12px;
+  }
+  .small-input {
+    width: 60px !important;
+    display: inline-block;
+  }
+  .date-wide {
+    width: 120px !important;
+    display: inline-block;
+    padding: 2px;
+    font-size: 12px;
+  }
+  .center {
+    text-align: center;
+  }
+  .signature-box {
+    height: 40px;
+    border-bottom: 1px solid black;
+    margin-top: 10px;
+  }
+  .italic {
+    font-style: italic;
+  }
+  .submit-btn {
+    margin-top: 15px;
+    padding: 6px 15px;
+    font-size: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .submit-btn:hover {
+    background-color: #45a049;
+  }
+</style>
 
-            </div>
-        </div>
+<form class="form-cuti" action="save_cuti.php" method="POST">
+
+  <div style="text-align:right; font-size:10px;">Form No: REM/09/07-001</div>
+  <h1>FORMULIR CUTI</h1>
+  
+  <div class="header-info">
+    <div>
+      <p>Nama:<input type="text" name="nama" id="input_nama"></p>
+      <p>NRP:<input type="text" name="nrp"></p>
+      <p>Section: 
+        <select name="Section">
+          <option value=""></option>
+          <option value="Production">Production</option>
+          <option value="CHRM">CHRM</option>
+          <option value="HRGA">HRGA</option>
+          <option value="Plant">Plant</option>
+          <option value="Logistic">Logistic</option>
+          <option value="KP">Keselamatan Pertambangan</option>
+          <option value="Eng">Engineering</option>
+        </select>
+      </p>
+      <p>Jabatan:<input type="text" name="jabatan"></p>
+      <p>Alamat Cuti:<input type="text" name="alamat_cuti"></p>
     </div>
-    <footer>
-        © 2025 Dashboard Online | Powered by Excel + HTML
-    </footer>
-</body>
-</html>
 
+    <div>
+      <p>Tanggal Masuk:<input type="date" name="tanggal_masuk"></p>
+      <p>Status Keluarga: 
+        <select name="status_keluarga">
+          <option value=""></option>
+          <option value="TK">TK</option>
+          <option value="K0">K0</option>
+          <option value="K1">K1</option>
+          <option value="K2">K2</option>
+          <option value="K3">K3</option>
+        </select>
+      </p>
+      <p>Status Penerimaan: 
+        <select name="status_penerimaan">
+          <option value=""></option>
+          <option value="HO">HO</option>
+          <option value="Site">Site</option>
+        </select>
+      </p>
+      <p>No Telepon:<input type="text" name="no_telepon"></p>
+    </div>
+  </div>
+
+  <div class="section-title">Mengajukan cuti :</div>
+
+  <table>
+    <tbody>
+      <tr>
+        <td style="text-align:left;">Cuti Tahunan</td>
+        <td>Tanggal 
+          <input type="date" name="cuti_tahunan_start" class="date-wide"> 
+          s/d 
+          <input type="date" name="cuti_tahunan_end" class="date-wide">
+        </td>
+        <td><input type="number" name="cuti_tahunan_days" class="small-input" readonly> Hari</td>
+      </tr>
+
+      <tr>
+        <td style="text-align:left;">Cuti Besar (Tahun...............)</td>
+        <td>Tanggal 
+          <input type="date" name="cuti_besar_start" class="date-wide"> 
+          s/d 
+          <input type="date" name="cuti_besar_end" class="date-wide">
+        </td>
+        <td><input type="number" name="cuti_besar_days" class="small-input" readonly> Hari</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Jumlah hari cuti dikompensasikan : <input type="number" name="jumlah_cuti_kompensasi" class="small-input"></p>
+
+  <table style="width: 100%; margin-top:10px;">
+    <thead>
+      <tr>
+        <th class="center">Pemohon,</th>
+        <th class="center">Disetujui oleh</th>
+        <th class="center">Diketahui oleh</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="signature-box"></div>
+          <div id="pemohon_nama" style="margin-top:3px; font-size:12px; text-align:center;"></div>
+        </td>
+        <td><div class="signature-box"></div><div class="italic" style="font-size:10px;">Atasan Langsung</div></td>
+        <td><div class="signature-box"></div><div class="italic" style="font-size:10px;">HR Section Head/REM Dept. Head</div></td>
+      </tr>
+      <tr>
+        <td>Tanggal : <input type="date" name="tgl_pemohon" class="date-wide"></td>
+        <td>Tanggal : <input type="date" name="tgl_disetujui" class="date-wide"></td>
+        <td>Tanggal : <input type="date" name="tgl_diketahui" class="date-wide"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">Diisi untuk Pendelegasian Wewenang</div>
+  <p>Untuk keperluan operasional dapat ditugaskan ke subordinat.</p>
+
+  <table style="width: 100%; margin-top:10px;">
+    <tbody>
+      <tr>
+        <td>Nama : <input type="text" name="delegasi_nama"></td>
+        <td>Keterangan : <input type="text" name="delegasi_keterangan"></td>
+      </tr>
+      <tr>
+        <td>NRP : <input type="text" name="delegasi_nrp"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Jabatan : <input type="text" name="delegasi_jabatan"></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="italic" style="font-size:12px;">
+    * Pekerja yang memiliki user account persetujuan transaksi (setara atau diatasnya).
+  </p>
+
+  <div class="section-title">Diisi untuk Validasi</div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>KETERANGAN</th>
+        <th>SALDO AWAL</th>
+        <th>PEMAKAIAN</th>
+        <th>SALDO AKHIR</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cuti Tahunan</td>
+        <td><input type="text" name="saldo_awal_tahunan" class="small-input"></td>
+        <td><input type="text" name="pemakaian_tahunan" class="small-input"></td>
+        <td><input type="text" name="saldo_akhir_tahunan" class="small-input"></td>
+      </tr>
+      <tr>
+        <td>Cuti Besar</td>
+        <td><input type="text" name="saldo_awal_besar" class="small-input"></td>
+        <td><input type="text" name="pemakaian_besar" class="small-input"></td>
+        <td><input type="text" name="saldo_akhir_besar" class="small-input"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Divalidasi oleh,</p>
+  <div class="signature-box"></div>
+  <p>Section Jobsite/REM Department</p>
+
+  <button type="submit" class="submit-btn">Submit</button>
+</form>
+
+<script>
+  // --- Nama Pemohon Otomatis ---
+  const inputNama = document.getElementById("input_nama");
+  const pemohonNama = document.getElementById("pemohon_nama");
+  inputNama.addEventListener("input", () => {
+    pemohonNama.innerText = inputNama.value;
+  });
+  pemohonNama.innerText = inputNama.value;
+
+  // --- Format tanggal DD/MM/YYYY ---
+  function formatTanggalDisplay(value) {
+    if (!value) return "";
+    const [y,m,d] = value.split("-");
+    return `${d}/${m}/${y}`;
+  }
+
+  function applyDateFormatter(selector) {
+    document.querySelectorAll(selector).forEach(input => {
+      input.addEventListener("change", function () {
+        const originalValue = this.value;
+        this.setAttribute("data-original", originalValue);
+        this.type = "text";
+        this.value = formatTanggalDisplay(originalValue);
+      });
+
+      input.addEventListener("focus", function() {
+        this.type = "date";
+        this.value = this.getAttribute("data-original") || "";
+      });
+
+      input.addEventListener("blur", function() {
+        const ori = this.getAttribute("data-original");
+        this.type = "text";
+        this.value = formatTanggalDisplay(ori);
+      });
+    });
+  }
+  applyDateFormatter('input[type="date"]');
+
+  // --- Hitung Selisih Hari ---
+  function hitungSelisihHari(startInput, endInput, outputInput) {
+    const startEl = document.querySelector(startInput);
+    const endEl = document.querySelector(endInput);
+
+    const start = startEl.getAttribute("data-original");
+    const end = endEl.getAttribute("data-original");
+
+    if (start && end) {
+      const selisih = Math.floor((new Date(end) - new Date(start)) / (1000*60*60*24)) + 1;
+      document.querySelector(outputInput).value = selisih > 0 ? selisih : 0;
+    }
+  }
+
+  ['cuti_tahunan', 'cuti_besar'].forEach(type => {
+    document.querySelector(`input[name="${type}_start"]`).addEventListener("change", () => {
+      hitungSelisihHari(`input[name="${type}_start"]`, `input[name="${type}_end"]`, `input[name="${type}_days"]`);
+    });
+    document.querySelector(`input[name="${type}_end"]`).addEventListener("change", () => {
+      hitungSelisihHari(`input[name="${type}_start"]`, `input[name="${type}_end"]`, `input[name="${type}_days"]`);
+    });
+  });
+</script>
