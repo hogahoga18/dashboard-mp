@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard Online</title>
+<title>Dashboard Fullscreen</title>
 <style>
   /* Reset margin & padding */
   html, body {
@@ -11,49 +11,18 @@
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow-x: hidden; /* hilangkan scroll horizontal */
+    overflow: hidden; /* hilangkan scroll */
     background: #f4f6f9;
-    font-family: Arial, sans-serif;
-  }
-
-  /* Header */
-  header {
-    width: 100%;
-    background: #1f2937;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    font-size: 24px;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-
-  /* Footer */
-  footer {
-    width: 100%;
-    background: #1f2937;
-    color: #ccc;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
-    position: relative;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-  }
-
-  /* Container body untuk iframe */
-  .content {
     display: flex;
-    justify-content: center; /* center horizontally */
-    align-items: flex-start;
-    padding: 20px;
-    box-sizing: border-box;
+    justify-content: center; /* center horizontal */
+    align-items: flex-start; /* mulai dari atas */
   }
 
   /* Wrapper iframe responsif */
   .iframe-wrapper {
     position: relative;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1200px; /* lebar maksimal dashboard */
     height: 0;
     padding-bottom: 70%; /* rasio tinggi agar proporsional */
     overflow: hidden;
@@ -74,42 +43,21 @@
 
   /* Responsive untuk layar kecil */
   @media (max-width: 600px) {
-    .content {
-      padding: 10px;
-    }
     .iframe-wrapper {
       padding-bottom: 90%; /* lebih tinggi agar pas di HP */
-    }
-    header {
-      font-size: 20px;
-      padding: 10px 0;
-    }
-    footer {
-      font-size: 12px;
-      padding: 8px 0;
     }
   }
 </style>
 </head>
 <body>
 
-  <header>
-    Dashboard Online
-  </header>
-
-  <div class="content">
-    <div class="iframe-wrapper">
-      <iframe
-        src="https://1drv.ms/x/c/2CA4BEDDF02455CD/IQQl_qyz2hUZRLWcznDHcB1HAZoq2_acBqiEKdpvPPO1E6U?em=2&wdAllowInteractivity=False&Item=DashboardArea&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
-        scrolling="no"
-        allowfullscreen>
-      </iframe>
-    </div>
+  <div class="iframe-wrapper">
+    <iframe
+      src="https://1drv.ms/x/c/2CA4BEDDF02455CD/IQQl_qyz2hUZRLWcznDHcB1HAZoq2_acBqiEKdpvPPO1E6U?em=2&wdAllowInteractivity=False&Item=DashboardArea&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
+      scrolling="no"
+      allowfullscreen>
+    </iframe>
   </div>
-
-  <footer>
-    © 2025 Dashboard Online | Powered by Excel + HTML
-  </footer>
 
 </body>
 </html>
