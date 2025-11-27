@@ -3,32 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard Fullscreen</title>
+<title>Dashboard Fit to Screen</title>
 <style>
-  /* Reset margin & padding */
   html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* hilangkan scroll */
-    background: #f4f6f9;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
     display: flex;
-    justify-content: center; /* center horizontal */
-    align-items: flex-start; /* mulai dari atas */
+    flex-direction: column;
+    background: #f4f6f9;
   }
 
-  /* Wrapper iframe responsif */
-  .iframe-wrapper {
-    position: relative;
+  header {
     width: 100%;
-    max-width: 1200px; /* lebar maksimal dashboard */
-    height: 0;
-    padding-bottom: 70%; /* rasio tinggi agar proporsional */
+    background: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex: 0 0 auto;
+  }
+
+  footer {
+    width: 100%;
+    background: #1f2937;
+    color: #ccc;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    flex: 0 0 auto;
+  }
+
+  .iframe-container {
+    flex: 1 1 auto;
+    width: 100%;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    background: white;
+    display: flex;
+    justify-content: center; /* center iframe */
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .iframe-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    height: 0;
+    padding-bottom: 65%; /* sesuaikan rasio untuk fit to width */
+    position: relative;
   }
 
   .iframe-wrapper iframe {
@@ -38,21 +65,42 @@
     width: 100%;
     height: 100%;
     border: none;
-    display: block;
   }
 
-  /* Responsive untuk layar kecil */
   @media (max-width: 600px) {
+    header {
+      font-size: 20px;
+      padding: 10px 0;
+    }
+    footer {
+      font-size: 12px;
+      padding: 8px 0;
+    }
     .iframe-wrapper {
-      padding-bottom: 90%; /* lebih tinggi agar pas di HP */
+      padding-bottom: 90%; /* lebih tinggi untuk HP */
     }
   }
 </style>
 </head>
 <body>
 
-<iframe width="700" height="633" frameborder="0" scrolling="no" src="https://1drv.ms/x/c/2CA4BEDDF02455CD/IQQl_qyz2hUZRLWcznDHcB1HAZoq2_acBqiEKdpvPPO1E6U?em=2&wdAllowInteractivity=False&Item=DashboardArea&wdHideGridlines=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+<header>
+  Dashboard Online
+</header>
+
+<div class="iframe-container">
+  <div class="iframe-wrapper">
+    <iframe
+      src="https://1drv.ms/x/c/2CA4BEDDF02455CD/IQQl_qyz2hUZRLWcznDHcB1HAZoq2_acBqiEKdpvPPO1E6U?em=2&wdAllowInteractivity=False&Item=DashboardArea&wdHideGridlines=True&wdInConfigurator=True&wdInConfigurator=True"
+      scrolling="no"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+<footer>
+  © 2025 Dashboard Online | Powered by Excel + HTML
+</footer>
+
 </body>
 </html>
-
-
