@@ -11,10 +11,10 @@
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* hilangkan scroll horizontal & vertical */
+    overflow: hidden; /* hilangkan scroll */
     background: #f4f6f9;
     display: flex;
-    justify-content: center; /* center horizontally */
+    justify-content: center; /* center horizontal */
     align-items: flex-start; /* mulai dari atas */
   }
 
@@ -22,9 +22,9 @@
   .iframe-wrapper {
     position: relative;
     width: 100%;
-    max-width: 1200px; /* batas maksimal lebar */
+    max-width: 1200px; /* lebar maksimal dashboard */
     height: 0;
-    padding-bottom: 70%; /* rasio tinggi sesuai dashboard */
+    padding-bottom: 70%; /* rasio tinggi agar proporsional */
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
@@ -44,7 +44,7 @@
   /* Responsive untuk layar kecil */
   @media (max-width: 600px) {
     .iframe-wrapper {
-      padding-bottom: 90%; /* tinggi lebih besar supaya pas di HP */
+      padding-bottom: 90%; /* lebih tinggi agar pas di HP */
     }
   }
 </style>
@@ -52,9 +52,12 @@
 <body>
 
   <div class="iframe-wrapper">
-  <iframe width="700" height="633" frameborder="0" scrolling="no" src="https://1drv.ms/x/c/2CA4BEDDF02455CD/IQQl_qyz2hUZRLWcznDHcB1HAZoq2_acBqiEKdpvPPO1E6U?em=2&wdAllowInteractivity=False&Item=DashboardArea&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+    <iframe
+      src="https://1drv.ms/x/c/2CA4BEDDF02455CD/IQQl_qyz2hUZRLWcznDHcB1HAZoq2_acBqiEKdpvPPO1E6U?em=2&wdAllowInteractivity=False&Item=DashboardArea&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
+      scrolling="no"
+      allowfullscreen>
+    </iframe>
   </div>
 
 </body>
 </html>
-
