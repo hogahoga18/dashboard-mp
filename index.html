@@ -6,28 +6,58 @@
 <title>Dashboard Full Width</title>
 <style>
   html, body {
-    margin: 0; padding: 0; width: 100%; height: 100%; overflow-x: hidden;
+    margin: 0; padding: 0; width: 100%; height: 100%; overflow-x: hidden; background: #f4f6f9;
   }
+
+  body {
+    display: flex;
+    justify-content: center; /* center horizontally */
+    align-items: flex-start; /* mulai dari atas */
+    min-height: 100vh;
+    padding: 20px; /* padding sekitar dashboard */
+    box-sizing: border-box;
+  }
+
   .iframe-wrapper {
     position: relative;
     width: 100%;
-    padding-bottom: 75%; /* rasio tinggi */
+    max-width: 900px;  /* max lebar dashboard agar tidak terlalu besar */
+    padding-bottom: 75%; /* rasio tinggi agar proporsional */
     height: 0;
     overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    background: white;
   }
+
   .iframe-wrapper iframe {
     position: absolute;
     top: 0; left: 0;
     width: 100%;
     height: 100%;
     border: none;
+    display: block;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    body {
+      padding: 10px;
+    }
+    .iframe-wrapper {
+      max-width: 100%;
+      padding-bottom: 90%; /* lebih tinggi untuk layar kecil */
+    }
   }
 </style>
 </head>
 <body>
   <div class="iframe-wrapper">
-<iframe width="700" height="648" frameborder="0" scrolling="no" src="https://1drv.ms/x/c/2CA4BEDDF02455CD/IQQl_qyz2hUZRLWcznDHcB1HAZoq2_acBqiEKdpvPPO1E6U?em=2&wdAllowInteractivity=False&Item=DashboardMp&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+    <iframe
+      src="https://1drv.ms/x/c/2CA4BEDDF02455CD/IQQl_qyz2hUZRLWcznDHcB1HAZoq2_acBqiEKdpvPPO1E6U?em=2&wdAllowInteractivity=False&Item=DashboardMp&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
+      scrolling="no"
+      allowfullscreen>
+    </iframe>
   </div>
 </body>
 </html>
-
